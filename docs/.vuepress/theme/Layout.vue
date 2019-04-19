@@ -38,6 +38,7 @@
     </div>
 
     <Home v-else-if="$page.frontmatter.home"/>
+
     <Page
       v-else
       :sidebar-items="sidebarItems"
@@ -52,6 +53,8 @@
       />
     </Page>
 
+    <Footer/>
+
     <SWUpdatePopup :updateEvent="swUpdateEvent"/>
   </div>
 </template>
@@ -62,12 +65,19 @@ import nprogress from 'nprogress'
 import Home from './Home.vue'
 import Navbar from './Navbar.vue'
 import Page from './Page.vue'
+import Footer from './Footer.vue'
 import Sidebar from './Sidebar.vue'
 import SWUpdatePopup from './SWUpdatePopup.vue'
 import { resolveSidebarItems } from './util'
 
 export default {
-  components: { Home, Page, Sidebar, Navbar, SWUpdatePopup },
+  components: {
+    Home,
+    Page,
+    Sidebar,
+    Navbar,
+    SWUpdatePopup,
+    Footer },
 
   data () {
     return {
