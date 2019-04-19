@@ -11,12 +11,12 @@
       @toggle-sidebar="toggleSidebar"
     />
 
-    <!-- <div
+    <div
       class="sidebar-mask"
       @click="toggleSidebar(false)"
-    ></div> -->
+    ></div>
 
-    <!-- <Sidebar
+    <Sidebar
       :items="sidebarItems"
       @toggle-sidebar="toggleSidebar"
     >
@@ -28,7 +28,7 @@
         name="sidebar-bottom"
         slot="bottom"
       />
-    </Sidebar> -->
+    </Sidebar>
 
     <div
       class="custom-layout"
@@ -38,7 +38,6 @@
     </div>
 
     <Home v-else-if="$page.frontmatter.home"/>
-
     <Page
       v-else
       :sidebar-items="sidebarItems"
@@ -146,6 +145,8 @@ export default {
     })
 
     this.$on('sw-updated', this.onSWUpdated)
+
+    console.log('frontmatter', this.$page.frontmatter)
   },
 
   methods: {

@@ -1,44 +1,19 @@
 <template>
   <div class="home">
-    <div class="hero">
-      <img
-        v-if="data.heroImage"
-        :src="$withBase(data.heroImage)"
-        alt="hero"
-      >
 
-      <h1>{{ data.heroText || $title || 'Hello' }}</h1>
-
-      <p class="description">
-        {{ data.tagline || $description || 'Welcome to your VuePress site' }}
-      </p>
-
-      <p
-        class="action"
-        v-if="data.actionText && data.actionLink"
-      >
-        <NavLink
-          class="action-button"
-          :item="actionLink"
-        />
-      </p>
-    </div>
-
-    <div
-      class="features"
-      v-if="data.features && data.features.length"
+    <li
+      v-for="page of filteredList"
+      :key="page.key"
+      class="list-item"
     >
-      <div
-        class="feature"
-        v-for="(feature, index) in data.features"
-        :key="index"
+      <router-link
+        :to="page.path"
+        class="item-title"
       >
-        <h2>{{ feature.title }}</h2>
-        <p>{{ feature.details }}</p>
-      </div>
-    </div>
-
-    <Content custom/>
+        {{ page.title }}
+      </router-link>
+      <br>
+    </li>
 
     <div
       class="footer"
@@ -65,6 +40,19 @@ export default {
         link: this.data.actionLink,
         text: this.data.actionText
       }
+    },
+
+    filteredList() {
+      // Order by publish date, desc
+      return this.$site.pages
+        .filter(item => {
+          console.log(item);
+          return item.path.startsWith('/posts/')
+        })
+        .sort((a, b) => {
+          return new Date(b.frontmatter.date || b.lastUpdated) - new Date(a.frontmatter.date || a.lastUpdated)
+          // return a.title > b.title
+        })
     }
   }
 }

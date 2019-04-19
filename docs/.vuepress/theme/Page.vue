@@ -4,7 +4,6 @@
 
     <Content :custom="false"/>
 
-
     <div class="page-edit">
       <div
         class="edit-link"
@@ -120,11 +119,14 @@ export default {
       } = this.$site.themeConfig
 
       let path = normalize(this.$page.path)
+
       if (endingSlashRE.test(path)) {
         path += 'README.md'
       } else {
         path += '.md'
       }
+      console.log('path', path)
+      
       if (docsRepo && editLinks) {
         return this.createEditLink(repo, docsRepo, docsDir, docsBranch, path)
       }
