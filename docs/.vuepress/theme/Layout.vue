@@ -193,3 +193,8 @@ export default {
 
 <style src="prismjs/themes/prism-tomorrow.css"></style>
 <style src="./styles/theme.styl" lang="stylus"></style>
+
+<style lang="scss">
+@import "~styles/theme";
+
+</style>

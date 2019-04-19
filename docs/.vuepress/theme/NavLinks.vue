@@ -19,15 +19,6 @@
       />
     </div>
     <SearchBox />
-    <div class="nav-item">
-      <a
-        href="/rss.xml"
-        class="nav-link"
-      >
-        <i class="fas fa-rss"></i>
-        <span class="sr-only">RSS Feed</span>
-      </a>
-    </div>
   </nav>
 </template>
 
