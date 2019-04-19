@@ -18,18 +18,16 @@
         :item="item"
       />
     </div>
-
-    <!-- repo link -->
-    <a
-      v-if="repoLink"
-      :href="repoLink"
-      class="repo-link"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      {{ repoLabel }}
-      <OutboundLink/>
-    </a>
+    <SearchBox />
+    <div class="nav-item">
+      <a
+        href="/rss.xml"
+        class="nav-link"
+      >
+        <i class="fas fa-rss"></i>
+        <span class="sr-only">RSS Feed</span>
+      </a>
+    </div>
   </nav>
 </template>
 
@@ -37,9 +35,10 @@
 import DropdownLink from './DropdownLink.vue'
 import { resolveNavLinkItem } from './util'
 import NavLink from './NavLink.vue'
+import SearchBox from './SearchBox.vue'
 
 export default {
-  components: { NavLink, DropdownLink },
+  components: { NavLink, DropdownLink, SearchBox },
 
   computed: {
     userNav () {
@@ -83,33 +82,6 @@ export default {
           items: (link.items || []).map(resolveNavLinkItem)
         })
       })
-    },
-
-    repoLink () {
-      const { repo } = this.$site.themeConfig
-      if (repo) {
-        return /^https?:/.test(repo)
-          ? repo
-          : `https://github.com/${repo}`
-      }
-    },
-
-    repoLabel () {
-      if (!this.repoLink) return
-      if (this.$site.themeConfig.repoLabel) {
-        return this.$site.themeConfig.repoLabel
-      }
-
-      const repoHost = this.repoLink.match(/^https?:\/\/[^/]+/)[0]
-      const platforms = ['GitHub', 'GitLab', 'Bitbucket']
-      for (let i = 0; i < platforms.length; i++) {
-        const platform = platforms[i]
-        if (new RegExp(platform, 'i').test(repoHost)) {
-          return platform
-        }
-      }
-
-      return 'Source'
     }
   }
 }
@@ -128,10 +100,8 @@ export default {
   .nav-item
     position relative
     display inline-block
-    margin-left 1.5rem
+    margin-right 1.5rem
     line-height 2rem
-    &:first-child
-      margin-left 0
   .repo-link
     margin-left 1.5rem
 

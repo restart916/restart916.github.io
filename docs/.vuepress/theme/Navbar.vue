@@ -26,11 +26,6 @@
         'max-width': linksWrapMaxWidth + 'px'
       }"
     >
-      <AlgoliaSearchBox
-        v-if="isAlgoliaSearch"
-        :options="algolia"
-      />
-      <SearchBox v-else-if="$site.themeConfig.search !== false"/>
       <NavLinks class="can-hide"/>
     </div>
   </header>
@@ -38,12 +33,11 @@
 
 <script>
 import SidebarButton from './SidebarButton.vue'
-import AlgoliaSearchBox from '@AlgoliaSearchBox'
 import SearchBox from './SearchBox.vue'
 import NavLinks from './NavLinks.vue'
 
 export default {
-  components: { SidebarButton, NavLinks, SearchBox, AlgoliaSearchBox },
+  components: { SidebarButton, NavLinks, SearchBox },
 
   data () {
     return {
@@ -92,6 +86,7 @@ $navbar-vertical-padding = 0.7rem
 $navbar-horizontal-padding = 1.5rem
 
 .navbar
+  font-family: 'Poppins';
   padding $navbar-vertical-padding $navbar-horizontal-padding
   line-height $navbarHeight - 1.4rem
   position relative

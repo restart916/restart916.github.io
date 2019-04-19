@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'blog',
+  title: 'Hyunjin Yoon',
   description: 'blog',
   themeConfig: {
     nav: [
@@ -11,6 +11,7 @@ module.exports = {
       ['/', 'Home'],
       ['/about/', 'About'],
       ['/contact/', 'Contact']
-    ]
-  }
+    ],
+  },
+
 }

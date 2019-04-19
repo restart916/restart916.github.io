@@ -6,15 +6,19 @@
 @require './wrapper'
 @require './toc'
 
+* {
+  box-sizing: border-box;
+}
+
 html, body
   padding 0
   margin 0
 
 body
-  font-family -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif
+  font-family "PT Serif", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif
   -webkit-font-smoothing antialiased
   -moz-osx-font-smoothing grayscale
-  font-size 16px
+  font-size 18px
   color $textColor
 
 .page
@@ -54,12 +58,10 @@ body
   border-right 1px solid $borderColor
   overflow-y auto
 
-.content:not(.custom)
+.content:not([custom])
   @extend $wrapper
   > *:first-child
     margin-top $navbarHeight
-  a:hover
-    text-decoration underline
   p.demo
     padding 1rem 1.5rem
     border 1px solid #ddd
@@ -67,7 +69,7 @@ body
   img
     max-width 100%
 
-.content.custom
+.content[custom]
   padding 0
   margin 0
   img
@@ -103,9 +105,12 @@ strong
   font-weight 600
 
 h1, h2, h3, h4, h5, h6
+  font-family "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
   font-weight 600
   line-height 1.25
-  .content:not(.custom) > &
+  .content:not([custom]) > &
     margin-top (0.5rem - $navbarHeight)
     padding-top ($navbarHeight + 1rem)
     margin-bottom 0
@@ -118,21 +123,26 @@ h1, h2, h3, h4, h5, h6
     opacity: 1
 
 h1
-  font-size 2.2rem
+  font-size 2.441rem
 
 h2
-  font-size 1.65rem
+  font-size 1.953rem
   padding-bottom .3rem
   border-bottom 1px solid $borderColor
 
 h3
-  font-size 1.35rem
+  font-size 1.563rem
+
+h4
+  font-size 1.25rem
+
+h5
+  font-size 1rem
 
 a.header-anchor
   font-size 0.85em
   float left
   margin-left -0.87em
-  padding-right 0.23em
   margin-top 0.125em
   opacity 0
   &:hover
@@ -171,13 +181,19 @@ th, td
     .sidebar-mask
       display: block
   &.no-navbar
-    .content:not(.custom) > h1, h2, h3, h4, h5, h6
-      margin-top 1.5rem
-      padding-top 0
+    .content:not([custom]) > h1, h2, h3, h4, h5, h6
+        margin-top 1.5rem
+        padding-top 0
     .sidebar
       top 0
     .custom-layout
       padding-top 0
+
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
 
 
 @media (min-width: ($MQMobile + 1px))

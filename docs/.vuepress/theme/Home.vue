@@ -44,6 +44,8 @@ export default {
 
     filteredList() {
       // Order by publish date, desc
+      console.log('this.$site.pages',this.$site.pages);
+
       return this.$site.pages
         .filter(item => {
           console.log(item);

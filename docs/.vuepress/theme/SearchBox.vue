@@ -159,22 +159,26 @@ export default {
   position relative
   margin-right 1rem
   input
-    cursor text
-    width 10rem
+    cursor pointer
+    width 0
     color lighten($textColor, 25%)
     display inline-block
-    border 1px solid darken($borderColor, 10%)
+    border 1px solid transparent
     border-radius 2rem
     font-size 0.9rem
     line-height 2rem
     padding 0 0.5rem 0 2rem
     outline none
+    position relative
     transition all .2s ease
-    background #fff url(./search.svg) 0.6rem 0.5rem no-repeat
+    background #fff url(./assets/search.svg) 0.6rem 0.5rem no-repeat
     background-size 1rem
     &:focus
-      cursor auto
       border-color $accentColor
+      cursor text
+      left 0
+      width 12rem
+      margin-left: 1rem
   .suggestions
     background #fff
     width 20rem
@@ -184,6 +188,7 @@ export default {
     border-radius 6px
     padding 0.4rem
     list-style-type none
+    right 0
     &.align-right
       right 0
   .suggestion
@@ -204,18 +209,6 @@ export default {
       a
         color $accentColor
 
-@media (max-width: $MQNarrow)
-  .search-box
-    input
-      cursor pointer
-      width 0
-      border-color transparent
-      position relative
-      &:focus
-        cursor text
-        left 0
-        width 10rem
-
 @media (max-width: $MQNarrow) and (min-width: $MQMobile)
   .search-box
     .suggestions
@@ -226,8 +219,13 @@ export default {
     margin-right 0
     input
       left 1rem
+      &:focus
+        width 18rem
     .suggestions
-      right 0
+      left 0
+      margin-top 1rem
+      z-index 9
+      top: 1.75rem
 
 @media (max-width: $MQMobileNarrow)
   .search-box
