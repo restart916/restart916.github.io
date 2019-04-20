@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home py-5">
 
     <li
       v-for="page of filteredList"
@@ -64,9 +64,7 @@ export default {
 @import './styles/config.styl'
 
 .home
-  padding $navbarHeight 2rem 0
-  max-width 960px
-  margin 0px auto
+
   .hero
     text-align center
     img

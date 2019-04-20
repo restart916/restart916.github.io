@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer">
+  <footer class="footer py-5">
     Hyunjin Yoon
     | Powered by
     <a

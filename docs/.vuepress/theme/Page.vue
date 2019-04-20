@@ -1,5 +1,5 @@
 <template>
-  <div class="page">
+  <div class="page py-5">
     <slot name="top"/>
 
     <Content :custom="false"/>
@@ -26,7 +26,7 @@
       </div>
     </div>
 
-    <div class="page-nav" v-if="prev || next">
+    <!-- <div class="page-nav" v-if="prev || next">
       <p class="inner">
         <span
           v-if="prev"
@@ -55,7 +55,7 @@
           →
         </span>
       </p>
-    </div>
+    </div> -->
 
     <slot name="bottom"/>
   </div>
@@ -126,7 +126,7 @@ export default {
         path += '.md'
       }
       console.log('path', path)
-      
+
       if (docsRepo && editLinks) {
         return this.createEditLink(repo, docsRepo, docsDir, docsBranch, path)
       }
@@ -202,8 +202,6 @@ function find (page, items, offset) {
 @import './styles/config.styl'
 @require './styles/wrapper.styl'
 
-.page
-  padding-bottom 2rem
 
 .page-edit
   @extend $wrapper
