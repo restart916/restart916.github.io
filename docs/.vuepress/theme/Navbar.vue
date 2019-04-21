@@ -4,7 +4,7 @@
 
     <router-link
       :to="$localePath"
-      class="home-link"
+      class="home-link ml-5 ml-md-0"
     >
       <img
         class="logo"
