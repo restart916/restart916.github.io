@@ -4,7 +4,7 @@
     <div class="">
       <router-link
         :to="$localePath"
-        class="home-link mt-1"
+        class="home-link mt-2"
       >
         <img
           class="logo"
@@ -116,6 +116,9 @@ $navbar-horizontal-padding = 1.5rem
       vertical-align top
     .nav-links
       flex 1
+@media (max-width: $MQMobile)
+  .navbar
+    border-bottom: solid 1px
 /*
 @media (max-width: $MQMobile)
   .navbar

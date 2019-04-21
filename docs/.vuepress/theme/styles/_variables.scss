@@ -1,1 +1,27 @@
+// Color system
 $blue:    #1360f6;
+
+// Paragraphs
+// Style p element.
+
+// $paragraph-margin-bottom:   0;
+
+ul {
+  padding-inline-start: 1rem;
+}
+
+::selection {
+    background:#1360f6;
+    color: #FFF;
+    text-shadow: none;
+}
+::-moz-selection {
+    background:#1360f6;
+    color: #FFF;
+    text-shadow: none;
+}
+::-webkit-selection {
+    background:#1360f6;
+    color: #FFF;
+    text-shadow: none;
+}

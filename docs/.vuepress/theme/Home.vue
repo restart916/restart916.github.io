@@ -1,10 +1,10 @@
 <template>
-  <div class="home py-md-5 px-0">
+  <div class="home py-md-5 px-0 py-4">
     <div
       v-if="filteredList.length === 0"
       class="empty-list"
     >
-      Ooops! Nothing here 👀
+      Ooops! Nothing here :eyes:
     </div>
 
     <li

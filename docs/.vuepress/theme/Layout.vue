@@ -53,6 +53,7 @@
     </Page>
 
     <SWUpdatePopup :updateEvent="swUpdateEvent"/>
+     <Footer/>
   </div>
 </template>
 
@@ -63,11 +64,12 @@ import Home from './Home.vue'
 import Navbar from './Navbar.vue'
 import Page from './Page.vue'
 import Sidebar from './Sidebar.vue'
+import Footer from './Footer.vue'
 import SWUpdatePopup from './SWUpdatePopup.vue'
 import { resolveSidebarItems } from './util'
 
 export default {
-  components: { Home, Page, Sidebar, Navbar, SWUpdatePopup },
+  components: { Home, Page, Sidebar, Navbar, SWUpdatePopup, Footer },
 
   data () {
     return {
@@ -179,8 +181,8 @@ export default {
 }
 </script>
 
-<style src="prismjs/themes/prism-tomorrow.css"></style>
-<style src="./styles/theme.styl" lang="stylus"></style>
+<!-- <style src="prismjs/themes/prism-tomorrow.css"></style> -->
+<!-- <style src="./styles/theme.styl" lang="stylus"></style> -->
 <style lang="scss">
 @import "~styles/theme";
 
