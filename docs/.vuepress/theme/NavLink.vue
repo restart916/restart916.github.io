@@ -1,6 +1,6 @@
 <template>
   <router-link
-    class="nav-link"
+    class="nav-link  px-2"
     :to="link"
     v-if="!isExternal(link)"
     :exact="exact"

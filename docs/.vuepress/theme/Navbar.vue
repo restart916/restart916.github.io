@@ -1,10 +1,10 @@
 <template>
-  <header class="navbar">
+  <header class="navbar px-0">
     <SidebarButton @toggle-sidebar="$emit('toggle-sidebar')"/>
 
     <router-link
       :to="$localePath"
-      class="home-link ml-5 ml-md-0"
+      class="home-link ml-5 ml-md-0 mt-1"
     >
       <img
         class="logo"
@@ -26,7 +26,7 @@
         'max-width': linksWrapMaxWidth + 'px'
       }"
     >
-      <NavLinks class="can-hide"/>
+      <NavLinks class="can-hide mr-md-3"/>
       <AlgoliaSearchBox
         v-if="isAlgoliaSearch"
         :options="algolia"
