@@ -1,5 +1,5 @@
 <template>
-  <header class="navbar px-0">
+  <header class="navbar">
     <SidebarButton @toggle-sidebar="$emit('toggle-sidebar')"/>
 
     <router-link
@@ -27,17 +27,23 @@
       }"
     >
       <NavLinks class="can-hide"/>
+      <AlgoliaSearchBox
+        v-if="isAlgoliaSearch"
+        :options="algolia"
+      />
+      <SearchBox v-else-if="$site.themeConfig.search !== false"/>
     </div>
   </header>
 </template>
 
 <script>
 import SidebarButton from './SidebarButton.vue'
+import AlgoliaSearchBox from '@AlgoliaSearchBox'
 import SearchBox from './SearchBox.vue'
 import NavLinks from './NavLinks.vue'
 
 export default {
-  components: { SidebarButton, NavLinks, SearchBox },
+  components: { SidebarButton, NavLinks, SearchBox, AlgoliaSearchBox },
 
   data () {
     return {
@@ -86,7 +92,6 @@ $navbar-vertical-padding = 0.7rem
 $navbar-horizontal-padding = 1.5rem
 
 .navbar
-  font-family: 'Poppins';
   padding $navbar-vertical-padding $navbar-horizontal-padding
   line-height $navbarHeight - 1.4rem
   position relative
@@ -125,4 +130,66 @@ $navbar-horizontal-padding = 1.5rem
       display none
     .links
       padding-left 1.5rem
+  .navbar
+    position fixed
+    z-index 20
+    top 0
+    left 0
+    right 0
+    height $navbarHeight
+    background-color #fff
+    box-sizing border-box
+    border-bottom 1px solid $borderColor
+    padding-left: 4rem;
+
+  .sidebar-mask
+    position fixed
+    z-index 9
+    top 0
+    left 0
+    width 100vw
+    height 100vh
+    display none
+
+  .sidebar
+    font-size 15px
+    background-color #fff
+    width $sidebarWidth
+    position fixed
+    z-index 10
+    margin 0
+    top $navbarHeight
+    left 0
+    bottom 0
+    box-sizing border-box
+    border-right 1px solid $borderColor
+    overflow-y auto
+
+  $mobileSidebarWidth = $sidebarWidth * 0.82
+
+  // narrow desktop / iPad
+  @media (max-width: $MQNarrow)
+    .sidebar
+      font-size 15px
+      width $mobileSidebarWidth
+    .page
+      padding-left $mobileSidebarWidth
+
+  // wide mobile
+  @media (max-width: $MQMobile)
+    .sidebar
+      top 0
+      padding-top $navbarHeight
+      transform translateX(-100%)
+      transition transform .2s ease
+    .page
+      padding-left 0
+    .theme-container
+      &.sidebar-open
+        .sidebar
+          transform translateX(0)
+      &.no-navbar
+        .sidebar
+          padding-top: 0
+
 </style>

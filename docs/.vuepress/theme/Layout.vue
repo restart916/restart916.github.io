@@ -1,11 +1,10 @@
 <template>
   <div
-    class="theme-container container mt-3"
+    class="theme-container"
     :class="pageClasses"
     @touchstart="onTouchStart"
     @touchend="onTouchEnd"
   >
-
     <Navbar
       v-if="shouldShowNavbar"
       @toggle-sidebar="toggleSidebar"
@@ -53,8 +52,6 @@
       />
     </Page>
 
-    <Footer/>
-
     <SWUpdatePopup :updateEvent="swUpdateEvent"/>
   </div>
 </template>
@@ -65,19 +62,12 @@ import nprogress from 'nprogress'
 import Home from './Home.vue'
 import Navbar from './Navbar.vue'
 import Page from './Page.vue'
-import Footer from './Footer.vue'
 import Sidebar from './Sidebar.vue'
 import SWUpdatePopup from './SWUpdatePopup.vue'
 import { resolveSidebarItems } from './util'
 
 export default {
-  components: {
-    Home,
-    Page,
-    Sidebar,
-    Navbar,
-    SWUpdatePopup,
-    Footer },
+  components: { Home, Page, Sidebar, Navbar, SWUpdatePopup },
 
   data () {
     return {
@@ -155,8 +145,6 @@ export default {
     })
 
     this.$on('sw-updated', this.onSWUpdated)
-
-    console.log('frontmatter', this.$page.frontmatter)
   },
 
   methods: {
@@ -193,18 +181,7 @@ export default {
 
 <style src="prismjs/themes/prism-tomorrow.css"></style>
 <style src="./styles/theme.styl" lang="stylus"></style>
-
 <style lang="scss">
 @import "~styles/theme";
-
-</style>
-
-<style lang="stylus">
-@media (min-width: ($MQMobile + 1px))
-  .theme-container.no-sidebar
-    .sidebar
-      display none
-    .page
-      padding-left 0
 
 </style>
