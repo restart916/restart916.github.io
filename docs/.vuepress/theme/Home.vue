@@ -1,5 +1,11 @@
 <template>
-  <div class="home py-5">
+  <div class="home py-md-5 px-0">
+    <div
+      v-if="filteredList.length === 0"
+      class="empty-list"
+    >
+      Ooops! Nothing here 👀
+    </div>
 
     <li
       v-for="page of filteredList"

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="theme-container container px-0"
+    class="theme-container container"
     :class="pageClasses"
     @touchstart="onTouchStart"
     @touchend="onTouchEnd"
@@ -10,12 +10,12 @@
       @toggle-sidebar="toggleSidebar"
     />
 
-    <div
+    <!-- <div
       class="sidebar-mask"
       @click="toggleSidebar(false)"
-    ></div>
+    ></div> -->
 
-    <Sidebar
+    <!-- <Sidebar
       :items="sidebarItems"
       @toggle-sidebar="toggleSidebar"
     >
@@ -27,7 +27,7 @@
         name="sidebar-bottom"
         slot="bottom"
       />
-    </Sidebar>
+    </Sidebar> -->
 
     <div
       class="custom-layout"

@@ -1,24 +1,25 @@
 <template>
-  <header class="navbar px-0">
-    <SidebarButton @toggle-sidebar="$emit('toggle-sidebar')"/>
-
-    <router-link
-      :to="$localePath"
-      class="home-link ml-5 ml-md-0 mt-1"
-    >
-      <img
-        class="logo"
-        v-if="$site.themeConfig.logo"
-        :src="$withBase($site.themeConfig.logo)"
-        :alt="$siteTitle"
+  <header class="navbar d-flex justify-content-center justify-content-md-between px-md-0">
+    <!-- <SidebarButton @toggle-sidebar="$emit('toggle-sidebar')"/> -->
+    <div class="">
+      <router-link
+        :to="$localePath"
+        class="home-link mt-1"
       >
-      <span
-        ref="siteName"
-        class="site-name"
-        v-if="$siteTitle"
-        :class="{ 'can-hide': $site.themeConfig.logo }"
-      >{{ $siteTitle }}</span>
-    </router-link>
+        <img
+          class="logo"
+          v-if="$site.themeConfig.logo"
+          :src="$withBase($site.themeConfig.logo)"
+          :alt="$siteTitle"
+        >
+        <span
+          ref="siteName"
+          class="site-name"
+          v-if="$siteTitle"
+          :class="{ 'can-hide': $site.themeConfig.logo }"
+        >{{ $siteTitle }}</span>
+      </router-link>
+    </div>
 
     <div
       class="links"
@@ -108,21 +109,14 @@ $navbar-horizontal-padding = 1.5rem
     color $textColor
     position relative
   .links
-    padding-left 1.5rem
-    box-sizing border-box
-    background-color white
     white-space nowrap
     font-size 0.9rem
-    position absolute
-    right $navbar-horizontal-padding
-    top $navbar-vertical-padding
-    display flex
     .search-box
       flex: 0 0 auto
       vertical-align top
     .nav-links
       flex 1
-
+/*
 @media (max-width: $MQMobile)
   .navbar
     padding-left 4rem
@@ -190,6 +184,6 @@ $navbar-horizontal-padding = 1.5rem
           transform translateX(0)
       &.no-navbar
         .sidebar
-          padding-top: 0
+          padding-top: 0 */
 
 </style>
