@@ -217,7 +217,7 @@ export default {
   .search-box
     margin-right 0
     input
-      left 1rem
+      /* left 1rem */
       &:focus
         width 18rem
     .suggestions

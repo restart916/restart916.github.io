@@ -7,9 +7,10 @@ module.exports = {
   description: 'blog',
   themeConfig: {
     nav: [
-      { text: 'Home', link: '/' },
+      { text: 'Blog', link: '/' },
+      { text: 'Works', link: '/contact/' },
       { text: 'About', link: '/about/' },
-      { text: 'Contact', link: '/contact/' }
+
     ]
   },
   configureWebpack: {
