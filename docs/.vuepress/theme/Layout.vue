@@ -11,7 +11,7 @@
       @toggle-sidebar="toggleSidebar"
     />
 
-    <!-- <div
+    <div
       class="sidebar-mask"
       @click="toggleSidebar(false)"
     ></div>
@@ -28,7 +28,7 @@
         name="sidebar-bottom"
         slot="bottom"
       />
-    </Sidebar> -->
+    </Sidebar>
 
     <div
       class="custom-layout"
@@ -196,5 +196,15 @@ export default {
 
 <style lang="scss">
 @import "~styles/theme";
+
+</style>
+
+<style lang="stylus">
+@media (min-width: ($MQMobile + 1px))
+  .theme-container.no-sidebar
+    .sidebar
+      display none
+    .page
+      padding-left 0
 
 </style>
