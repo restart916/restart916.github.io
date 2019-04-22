@@ -4,7 +4,7 @@
       v-if="filteredList.length === 0"
       class="empty-list"
     >
-      Ooops! Nothing here :eyes:
+      아직 준비 중이에요 👀
     </div>
 
     <li

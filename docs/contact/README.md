@@ -10,4 +10,4 @@ meta:
 ## Works
 ---
 
-Ooops! Nothing here :eyes:
+아직 준비 중이에요 :eyes:
