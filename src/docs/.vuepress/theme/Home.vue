@@ -18,6 +18,7 @@
       >
         {{ page.title }}
       </router-link>
+      <br>{{ page.frontmatter.excerpt }}
       <br>
     </li>
 
