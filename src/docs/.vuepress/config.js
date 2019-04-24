@@ -9,8 +9,8 @@ module.exports = {
     nav: [
       { text: 'Blog', link: '/' },
       { text: 'Works', link: '/contact/' },
-      { text: 'About', link: '/about/' },
-
+      { text: 'Book', link: '/book/' },
+      { text: 'About', link: '/about/' }
     ]
   },
   configureWebpack: {
