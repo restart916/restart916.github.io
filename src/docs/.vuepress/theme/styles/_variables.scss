@@ -1,14 +1,23 @@
 // Color system
 $blue:    #1360f6;
-
-// Paragraphs
-// Style p element.
-
-// $paragraph-margin-bottom:   0;
+$gray-900: #212529;
+$dark: $gray-900;
 
 ul {
   padding-inline-start: 1rem;
 }
+
+// Links
+//
+// Style anchor elements.
+
+$link-color:                              $blue;
+$link-hover-color:                        $link-color;
+
+// Darken percentage for links with `.text-*` class (e.g. `.text-success`)
+$emphasized-link-hover-darken-percentage: 100%;
+
+
 
 ::selection {
     background:#1360f6;

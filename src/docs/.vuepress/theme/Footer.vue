@@ -6,6 +6,7 @@
       href="https://vuepress.vuejs.org/"
       rel="noopener"
       target="_blank"
+      class="text-primary"
     >
       VuePress
     </a>

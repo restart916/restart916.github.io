@@ -14,7 +14,7 @@
         >
         <span
           ref="siteName"
-          class="site-name"
+          class="site-name text-dark"
           v-if="$siteTitle"
           :class="{ 'can-hide': $site.themeConfig.logo }"
         >{{ $siteTitle }}</span>
@@ -106,7 +106,6 @@ $navbar-horizontal-padding = 1.5rem
   .site-name
     font-size 1.3rem
     font-weight 600
-    color $textColor
     position relative
   .links
     white-space nowrap

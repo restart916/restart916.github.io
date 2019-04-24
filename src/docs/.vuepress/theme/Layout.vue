@@ -36,7 +36,7 @@
       <component :is="$page.frontmatter.layout"/>
     </div>
 
-    <Home v-else-if="$page.frontmatter.home"/>
+    <Home v-else-if="$page.frontmatter.home || $page.frontmatter.book"/>
 
     <Page
       v-else
@@ -185,5 +185,7 @@ export default {
 <!-- <style src="./styles/theme.styl" lang="stylus"></style> -->
 <style lang="scss">
 @import "~styles/theme";
-
+a.header-anchor {
+  color: $primary
+}
 </style>
