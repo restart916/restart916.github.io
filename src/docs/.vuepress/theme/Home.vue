@@ -7,7 +7,7 @@
       아직 준비 중이에요 👀
     </div>
 
-    <li
+    <div
       v-for="page of filteredList"
       :key="page.key"
       class="list-item"
@@ -16,11 +16,14 @@
         :to="page.path"
         class="item-title"
       >
-        {{ page.title }}
+        <h4 class="mb-3 text-dark">
+          {{ page.title }}
+        </h4>
+        <p class="text-secondary">
+          {{ page.frontmatter.excerpt }}
+        </p>
       </router-link>
-      <br>{{ page.frontmatter.excerpt }}
-      <br>
-    </li>
+    </div>
 
     <div
       class="footer"
@@ -35,6 +38,13 @@
 import NavLink from './NavLink.vue'
 
 export default {
+  name: 'Home',
+  props: {
+      list: {
+          type: Array,
+          default: () => []
+      }
+  },
   components: { NavLink },
 
   computed: {
@@ -51,12 +61,17 @@ export default {
 
     filteredList() {
       // Order by publish date, desc
-      console.log('this.$site.pages',this.$site.pages);
+      console.log('this.$page.frontmatter',this.$page.frontmatter);
 
       return this.$site.pages
         .filter(item => {
           console.log(item);
-          return item.path.startsWith('/posts/')
+          if(this.$page.frontmatter.home){
+            return item.path.startsWith('/posts/')
+          } else if (this.$page.frontmatter.book) {
+            return item.path.startsWith('/book/')
+          }
+
         })
         .sort((a, b) => {
           return new Date(b.frontmatter.date || b.lastUpdated) - new Date(a.frontmatter.date || a.lastUpdated)
@@ -71,7 +86,6 @@ export default {
 @import './styles/config.styl'
 
 .home
-
   .hero
     text-align center
     img
@@ -79,15 +93,6 @@ export default {
       max-height 280px
       display block
       margin 3rem auto 1.5rem
-    h1
-      font-size 3rem
-    h1, .description, .action
-      margin 1.8rem auto
-    .description
-      max-width 35rem
-      font-size 1.6rem
-      line-height 1.3
-      color lighten($textColor, 40%)
     .action-button
       display inline-block
       font-size 1.2rem
