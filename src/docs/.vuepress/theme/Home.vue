@@ -11,18 +11,33 @@
       v-for="page of filteredList"
       :key="page.key"
       class="list-item"
+      v-if="page.title"
     >
-      <router-link
-        :to="page.path"
-        class="item-title"
-      >
-        <h4 class="mb-3 text-dark">
+      <div v-if="page.frontmatter.excerpt" class="py-3 border-bottom ">
+        <router-link
+          :to="page.path"
+          class="item-title text-dark"
+        >
+          <div class="hover-underline">
+            <h4 class="mb-3 ">
+              {{ page.title }}
+            </h4>
+            <p class="text-secondary mb-0">
+              {{ page.frontmatter.excerpt }}
+            </p>
+          </div>
+        </router-link>
+      </div>
+      <div v-else>
+        <h4 class="py-3 border-bottom mb-0">
+          <router-link
+            :to="page.path"
+            class="item-title text-dark hover-underline"
+          >
           {{ page.title }}
+          </router-link>
         </h4>
-        <p class="text-secondary">
-          {{ page.frontmatter.excerpt }}
-        </p>
-      </router-link>
+      </div>
     </div>
 
     <div

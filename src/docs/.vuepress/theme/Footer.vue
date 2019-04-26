@@ -1,12 +1,11 @@
 <template>
-  <footer class="footer pb-5">
+  <footer class="footer pb-5 text-secondary">
     Hyunjin Yoon
     | Powered by
     <a
       href="https://vuepress.vuejs.org/"
       rel="noopener"
       target="_blank"
-      class="text-primary"
     >
       VuePress
     </a>

@@ -11,12 +11,16 @@ ul {
 //
 // Style anchor elements.
 
-$link-color:                              $blue;
+$link-color:                              $blue ;
 $link-hover-color:                        $link-color;
-
+$link-hover-decoration:                   none;
 // Darken percentage for links with `.text-*` class (e.g. `.text-success`)
-$emphasized-link-hover-darken-percentage: 100%;
+$emphasized-link-hover-darken-percentage: 0%;
 
+// Typography
+//
+// Font, line-height, and color for body text, headings, and more.
+$line-height-base: 1.9;
 
 
 ::selection {

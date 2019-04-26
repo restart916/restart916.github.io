@@ -96,8 +96,11 @@ $navbar-horizontal-padding = 1.5rem
   padding $navbar-vertical-padding $navbar-horizontal-padding
   line-height $navbarHeight - 1.4rem
   position relative
+
   a, span, img
     display inline-block
+  .home-link:hover
+    border-bottom none
   .logo
     height $navbarHeight - 1.4rem
     min-width $navbarHeight - 1.4rem
