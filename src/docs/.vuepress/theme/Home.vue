@@ -19,7 +19,7 @@
           class="item-title text-dark"
         >
           <div class="hover-underline">
-            <h4 class="mb-3 ">
+            <h4 class="mb-2 ">
               {{ page.title }}
             </h4>
             <p class="text-secondary mb-0">
