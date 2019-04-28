@@ -1,17 +1,14 @@
 ---
 worksDetail: 1
-title: soomgo app landing page
-image : "/upload/soomgo-landing_thumbnail.png"
+title: Promote webtoon to 3D printers
+image : "/upload/webtoon_thumbnail.png"
 date : 2017
 ---
 
-<p align="center">
-  <img src="../images/soomgo_landing2.png"/>
-</p>
+![Promote webtoon image to 3D printers part 2](../images/webtoon_2.png)
 
-<p align="center">
-  <img src="../images/soomgo_landing1.png"/>
-</p>
+![Promote webtoon image to 3D printers part 1](../images/webtoon_1.png)
 
-O2O 오픈마켓 서비스 숨고의 앱 다운로드 랜딩 웹페이지 작업. 기획,디자인 외 실제 웹사이트 프런트엔드 구현\
-https://soomgo.com/app/
+![Promote webtoon image to 3D printers part 2](../images/webtoon_3.png)
+
+3D 프린터 홍보 웹툰

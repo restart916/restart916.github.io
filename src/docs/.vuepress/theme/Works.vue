@@ -11,7 +11,7 @@
       <div
         v-for="page of filteredList"
         :key="page.key"
-        class="col-md-4 col"
+        class="col-md-4 col-sm"
         v-if="page.title"
       >
         <router-link
