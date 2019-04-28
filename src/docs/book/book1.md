@@ -1,16 +1,7 @@
 ---
+bookDetail: 1
 title: 절망 독서
-meta:
-  - name: description
-    content: Page description
-  - name: keywords
-    content: js vuejs vuepress   
----
-
-### 02절망 독서
-
-<div class="mt-2 ml-4 text-secondary">가시라기 히로키 저</div>
-
+writer: 가시라기 히로키 저
 ---
 
 - 극복은 절망한 순간부터 곧바로 시작되지 않습니다. 절망한 채로 보내야만 하는 기간이 있는 법이니까요.

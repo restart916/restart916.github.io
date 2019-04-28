@@ -38,6 +38,12 @@
 
     <Home v-else-if="$page.frontmatter.home || $page.frontmatter.book"/>
 
+    <Works v-else-if="$page.frontmatter.works"/>
+
+    <BookDetail v-else-if="$page.frontmatter.bookDetail"/>
+
+    <WorkDetail v-else-if="$page.frontmatter.worksDetail"/>
+
     <Page
       v-else
       :sidebar-items="sidebarItems"
@@ -62,6 +68,9 @@ import Vue from 'vue'
 import nprogress from 'nprogress'
 import Home from './Home.vue'
 import Navbar from './Navbar.vue'
+import Works from './Works.vue'
+import WorkDetail from './WorkDetail.vue'
+import BookDetail from './BookDetail.vue'
 import Page from './Page.vue'
 import Sidebar from './Sidebar.vue'
 import Footer from './Footer.vue'
@@ -69,7 +78,16 @@ import SWUpdatePopup from './SWUpdatePopup.vue'
 import { resolveSidebarItems } from './util'
 
 export default {
-  components: { Home, Page, Sidebar, Navbar, SWUpdatePopup, Footer },
+  components: {
+    Home,
+    Sidebar,
+    Navbar,
+    SWUpdatePopup,
+    Footer,
+    Works,
+    BookDetail,
+    WorkDetail,
+    Page},
 
   data () {
     return {
@@ -129,8 +147,6 @@ export default {
   },
 
   mounted () {
-    
-    $('body').css('display', 'none').fadeIn(500);
 
     window.addEventListener('scroll', this.onScroll)
 

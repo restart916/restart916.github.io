@@ -6,11 +6,14 @@
         <span class="text-primary"># </span>
         {{this.$page.frontmatter.title}}
       </h3>
+      <div class="mt-2 ml-4 text-secondary">
+        {{this.$page.frontmatter.writer}}
+      </div>
     </div>
 
     <Content :custom="false"/>
 
-    <div class="page-edit">
+    <!-- <div class="page-edit">
       <div
         class="edit-link"
         v-if="editLink"
@@ -30,9 +33,9 @@
         <span class="prefix">{{ lastUpdatedText }}: </span>
         <span class="time">{{ lastUpdated }}</span>
       </div>
-    </div>
+    </div> -->
 
-    <div class="page-nav" v-if="prev || next">
+    <!-- <div class="page-nav" v-if="prev || next">
       <p class="inner">
         <span
           v-if="prev"
@@ -61,7 +64,7 @@
           →
         </span>
       </p>
-    </div>
+    </div> -->
 
     <slot name="bottom"/>
   </div>
@@ -72,6 +75,10 @@ import { resolvePage, normalize, outboundRE, endingSlashRE } from './util'
 
 export default {
   props: ['sidebarItems'],
+
+  mounted () {
+    console.log('this.$page.frontmatter',this.$page.frontmatter);
+  },
 
   computed: {
     lastUpdated () {
@@ -125,11 +132,14 @@ export default {
       } = this.$site.themeConfig
 
       let path = normalize(this.$page.path)
+
       if (endingSlashRE.test(path)) {
         path += 'README.md'
       } else {
         path += '.md'
       }
+      console.log('path', path)
+
       if (docsRepo && editLinks) {
         return this.createEditLink(repo, docsRepo, docsDir, docsBranch, path)
       }
@@ -143,6 +153,7 @@ export default {
       )
     }
   },
+
 
   methods: {
     createEditLink (repo, docsRepo, docsDir, docsBranch, path) {
@@ -204,10 +215,12 @@ function find (page, items, offset) {
 <style lang="stylus">
 @import './styles/config.styl'
 @require './styles/wrapper.styl'
-
 .page
-  padding-bottom 2rem
-
+  .content
+    img
+      width 100%
+    h3
+      font-weight 400
 .page-edit
   @extend $wrapper
   padding-top 1rem

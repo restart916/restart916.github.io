@@ -1,69 +1,18 @@
 <template>
-  <div class="page py-md-5 px-0 py-4">
+  <div class="page py-5">
     <slot name="top"/>
-    <div class="border-bottom pb-3 mb-4">
+    <div class="mb-5">
       <h3>
         <span class="text-primary"># </span>
         {{this.$page.frontmatter.title}}
       </h3>
+      <div class="mt-2 ml-4 text-secondary">
+        {{this.$page.frontmatter.date}}
+      </div>
     </div>
 
     <Content :custom="false"/>
 
-    <div class="page-edit">
-      <div
-        class="edit-link"
-        v-if="editLink"
-      >
-        <a
-          :href="editLink"
-          target="_blank"
-          rel="noopener noreferrer"
-        >{{ editLinkText }}</a>
-        <OutboundLink/>
-      </div>
-
-      <div
-        class="last-updated"
-        v-if="lastUpdated"
-      >
-        <span class="prefix">{{ lastUpdatedText }}: </span>
-        <span class="time">{{ lastUpdated }}</span>
-      </div>
-    </div>
-
-    <div class="page-nav" v-if="prev || next">
-      <p class="inner">
-        <span
-          v-if="prev"
-          class="prev"
-        >
-          ←
-          <router-link
-            v-if="prev"
-            class="prev"
-            :to="prev.path"
-          >
-            {{ prev.title || prev.path }}
-          </router-link>
-        </span>
-
-        <span
-          v-if="next"
-          class="next"
-        >
-          <router-link
-            v-if="next"
-            :to="next.path"
-          >
-            {{ next.title || next.path }}
-          </router-link>
-          →
-        </span>
-      </p>
-    </div>
-
-    <slot name="bottom"/>
   </div>
 </template>
 
@@ -71,8 +20,8 @@
 import { resolvePage, normalize, outboundRE, endingSlashRE } from './util'
 
 export default {
+  name: 'WorkDetail',
   props: ['sidebarItems'],
-
   computed: {
     lastUpdated () {
       if (this.$page.lastUpdated) {
@@ -125,11 +74,14 @@ export default {
       } = this.$site.themeConfig
 
       let path = normalize(this.$page.path)
+
       if (endingSlashRE.test(path)) {
         path += 'README.md'
       } else {
         path += '.md'
       }
+      console.log('path', path)
+
       if (docsRepo && editLinks) {
         return this.createEditLink(repo, docsRepo, docsDir, docsBranch, path)
       }
@@ -141,7 +93,16 @@ export default {
         this.$site.themeConfig.editLinkText ||
         `Edit this page`
       )
-    }
+    },
+
+    filteredList() {
+      // Order by publish date, desc
+      console.log('this.$page.frontmatter',this.$page.frontmatter);
+      return this.$site.pages
+      .filter(item => {
+        return item.path.startsWith('/works/')
+      })
+    },
   },
 
   methods: {
@@ -204,10 +165,10 @@ function find (page, items, offset) {
 <style lang="stylus">
 @import './styles/config.styl'
 @require './styles/wrapper.styl'
-
 .page
-  padding-bottom 2rem
-
+  .content
+    img
+      width 100%
 .page-edit
   @extend $wrapper
   padding-top 1rem
@@ -250,4 +211,10 @@ function find (page, items, offset) {
       float none
       text-align left
 
+</style>
+
+<style lang="scss" scoped>
+h3 {
+  font-weight: 300;
+}
 </style>
