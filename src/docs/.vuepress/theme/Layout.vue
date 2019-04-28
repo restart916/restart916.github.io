@@ -129,6 +129,9 @@ export default {
   },
 
   mounted () {
+    
+    $('body').css('display', 'none').fadeIn(500);
+
     window.addEventListener('scroll', this.onScroll)
 
     // configure progress bar
@@ -147,6 +150,7 @@ export default {
     })
 
     this.$on('sw-updated', this.onSWUpdated)
+
   },
 
   methods: {

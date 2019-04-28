@@ -10,6 +10,7 @@ h3 {
 }
 
 .hover-underline {
+  transition: 0.3s;
   &:hover {
     color : $primary !important;
     transition: all 0.3s ease-in-out;
