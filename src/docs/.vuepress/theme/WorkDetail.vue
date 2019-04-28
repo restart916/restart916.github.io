@@ -214,9 +214,6 @@ function find (page, items, offset) {
 </style>
 
 <style lang="scss" scoped>
-h3 {
-  font-weight: 300;
-}
 
 img {
   text-align: center;

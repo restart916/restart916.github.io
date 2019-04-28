@@ -208,4 +208,7 @@ export default {
 a.header-anchor {
   color: $primary
 }
+h3 {
+  font-weight: 400;
+}
 </style>
