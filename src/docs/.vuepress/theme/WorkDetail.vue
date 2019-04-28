@@ -217,4 +217,8 @@ function find (page, items, offset) {
 h3 {
   font-weight: 300;
 }
+
+img {
+  text-align: center;
+}
 </style>

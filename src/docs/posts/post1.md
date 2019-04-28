@@ -1,5 +1,5 @@
 ---
-title: q
-excerpt: It's been a little over a month since I last wrote here. And in that time, I have challenged myself to dive headfirst into projects equipped with little more than a belief that I could figure it out along the way.    
+title: 자바스크립트로 계산기 만들어보기— 1
+excerpt: 인터넷에서 자바스크립트 계산기를 검색할 경우 많은 예시들이 나오지만 대부분 최종 완성본만 있는 경우가 많았다.   
 ---
-"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."
+[자바스크립트로 계산기 만들어보기— 1](https://link.medium.com/kPBe4EalgW)
