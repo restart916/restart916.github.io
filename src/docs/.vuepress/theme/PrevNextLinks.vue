@@ -1,6 +1,7 @@
 <template>
   <section class="prev-next-links mt-5 pt-4 border-top">
-    <div class="links-wrapper d-flex">
+    <div class="links-wrapper d-flex"
+    :class="[contentEnd ? 'justify-content-between' : 'justify-content-end']">
       <router-link v-if="prev" class="prev" :to="prev.path">
         <!-- <BaseIcon iconName="chevron-left"><ChevronLeft/></BaseIcon> -->
         <div class="link-text">← {{ prev.title }}</div>
@@ -19,6 +20,7 @@
 // import ChevronLeft from "@/icons/ChevronLeft";
 
 export default {
+  name: 'PrevNextLinks',
   components: {
     // BaseIcon,
     // ChevronRight,
@@ -26,7 +28,8 @@ export default {
   },
   data () {
     return {
-      postList : []
+      postList : [],
+      contentEnd: false
     }
   },
   mounted: function(){
@@ -52,12 +55,12 @@ export default {
       }
     },
     prev() {
-      return this.currentIndex > 0 ? this.postList[this.currentIndex - 1] : null;
+      return this.currentIndex > 0 ?
+      this.postList[this.currentIndex - 1] : this.contentEnd = true;
     },
     next() {
-      return this.currentIndex < this.postList.length - 1
-        ? this.postList[this.currentIndex + 1]
-        : null;
+      return this.currentIndex < this.postList.length - 1 ?
+      this.postList[this.currentIndex + 1] : null;
     }
   }
 };
