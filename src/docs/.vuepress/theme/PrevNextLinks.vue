@@ -1,15 +1,19 @@
 <template>
   <section class="prev-next-links mt-5 pt-4 border-top">
-    <div class="links-wrapper d-flex"
-    :class="[contentEnd ? 'justify-content-between' : 'justify-content-end']">
-      <router-link v-if="prev" class="prev" :to="prev.path">
-        <!-- <BaseIcon iconName="chevron-left"><ChevronLeft/></BaseIcon> -->
-        <div class="link-text">← {{ prev.title }}</div>
-      </router-link>
-      <router-link v-if="next" class="next" :to="next.path">
-        <div class="link-text">{{ next.title }} →</div>
-        <!-- <BaseIcon iconName="chevron-right"><ChevronRight/></BaseIcon> -->
-      </router-link>
+    <div class="links-wrapper d-flex justify-content-between"
+    :class="isContentEnd">
+      <div>
+        <router-link v-if="prev" class="prev" :to="prev.path">
+          <!-- <BaseIcon iconName="chevron-left"><ChevronLeft/></BaseIcon> -->
+          <div class="link-text">← {{ prev.title }}</div>
+        </router-link>
+      </div>
+      <div>
+        <router-link v-if="next" class="next" :to="next.path">
+          <div class="link-text">{{ next.title }} →</div>
+          <!-- <BaseIcon iconName="chevron-right"><ChevronRight/></BaseIcon> -->
+        </router-link>
+      </div>
     </div>
   </section>
 </template>
@@ -56,11 +60,15 @@ export default {
     },
     prev() {
       return this.currentIndex > 0 ?
-      this.postList[this.currentIndex - 1] : this.contentEnd = true;
+      this.postList[this.currentIndex - 1] : null;
     },
     next() {
       return this.currentIndex < this.postList.length - 1 ?
       this.postList[this.currentIndex + 1] : null;
+    },
+    isContentEnd() {
+      return this.currentIndex > 0 ?
+      'justify-content-between' : 'justify-content-end';
     }
   }
 };
