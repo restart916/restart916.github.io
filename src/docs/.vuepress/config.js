@@ -11,7 +11,8 @@ module.exports = {
       { text: 'Works', link: '/works/' },
       { text: 'Book', link: '/book/' },
       { text: 'About', link: '/about/' }
-    ]
+    ],
+    sidebar: 'auto'  
   },
   configureWebpack: {
     resolve: {
