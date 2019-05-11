@@ -40,7 +40,8 @@
 
     <Works v-else-if="$page.frontmatter.works"/>
 
-    <BookDetail v-else-if="$page.frontmatter.bookDetail"/>
+    <BookDetail :pageKey="$page.frontmatter.title"
+      v-else-if="$page.frontmatter.bookDetail"/>
 
     <WorkDetail v-else-if="$page.frontmatter.worksDetail"/>
 
