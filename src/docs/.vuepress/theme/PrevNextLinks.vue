@@ -4,14 +4,12 @@
     :class="isContentEnd">
       <div>
         <router-link v-if="prev" class="prev" :to="prev.path">
-          <!-- <BaseIcon iconName="chevron-left"><ChevronLeft/></BaseIcon> -->
           <div class="link-text">← {{ prev.title }}</div>
         </router-link>
       </div>
       <div>
         <router-link v-if="next" class="next" :to="next.path">
           <div class="link-text">{{ next.title }} →</div>
-          <!-- <BaseIcon iconName="chevron-right"><ChevronRight/></BaseIcon> -->
         </router-link>
       </div>
     </div>
@@ -19,17 +17,8 @@
 </template>
 
 <script>
-// import BaseIcon from "@/icons/Base";
-// import ChevronRight from "@/icons/ChevronRight";
-// import ChevronLeft from "@/icons/ChevronLeft";
-
 export default {
   name: 'PrevNextLinks',
-  components: {
-    // BaseIcon,
-    // ChevronRight,
-    // ChevronLeft
-  },
   data () {
     return {
       postList : [],
@@ -39,8 +28,8 @@ export default {
   mounted: function(){
     this.postList = this.$site.pages
     .filter(item => {
-      console.log(item);
-      if(this.$page.frontmatter.home){
+      console.log('this.$page', this.$page);
+      if(this.$page.path.startsWith('/posts/')){
         return item.path.startsWith('/posts/')
       } else if (this.$page.frontmatter.bookDetail && item.title) {
         return item.path.startsWith('/book/')
@@ -51,7 +40,6 @@ export default {
   },
   computed: {
     currentIndex() {
-      console.log('this.postList', this.postList)
       for (let i = 0; i < this.postList.length; i++) {
         if (this.postList[i].key === this.$page.key) {
           return i;

@@ -21,7 +21,7 @@
 
 <script>
 import { resolvePage, normalize, outboundRE, endingSlashRE } from './util'
-import PrevNextLinks from "./PrevNextLinks";
+import PrevNextLinks from "./PrevNextLinks"
 
 export default {
   props: ['sidebarItems'],
