@@ -12,23 +12,23 @@
               <div class="d-flex mt-2">                
                 <div class="mr-3">
                     <a href="http://tiny.cc/gxwp4y" target="_blank" class="text-secondary">
-                        <u>
+                        <u class="hover-color">
                             디자인 포트폴리오
                         </u>
                     </a>                    
                 </div>                
                 <div>               
-                    <a href="https://github.com/hyunjinyoon-christine" target="_blank" class="text-secondary">
-                        <i class="fab fa-github fa-lg"></i>
+                    <a href="https://github.com/hyunjinyoon-christine" target="_blank" class="text-secondary mr-1">
+                        <i class="fab fa-github fa-lg hover-color"></i>
                     </a>                
-                    <a href="https://www.linkedin.com/in/hyunjin-yoon-851971a6" target="_blank" class="text-secondary">
-                        <i class="fab fa-linkedin fa-lg"></i>
+                    <a href="https://www.linkedin.com/in/hyunjin-yoon-851971a6" target="_blank" class="text-secondary mr-1">
+                        <i class="fab fa-linkedin fa-lg hover-color"></i>
                     </a>
-                    <a href="https://medium.com/@moriwilly" target="_blank" class="text-secondary">
-                        <i class="fab fa-medium-m fa-lg"></i>
+                    <a href="https://medium.com/@moriwilly" target="_blank" class="text-secondary mr-1">
+                        <i class="fab fa-medium-m fa-lg hover-color"></i>
                     </a>
                     <a href="facebook.com/HyunjinYoonMe" target="_blank" class="text-secondary">
-                        <i class="fab fa-facebook-square fa-lg"></i>
+                        <i class="fab fa-facebook-square fa-lg hover-color"></i>
                     </a>
                 </div>
               </div>              

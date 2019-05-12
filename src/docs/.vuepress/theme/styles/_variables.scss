@@ -38,3 +38,9 @@ $line-height-base: 1.9;
     color: #FFF;
     text-shadow: none;
 }
+
+.hover-color {
+    &:hover {
+        color: $blue
+    }
+}
