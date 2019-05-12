@@ -9,20 +9,29 @@
                   Front-End Developer or Product Designer<br>
                   5년동안 프로덕트 디자이너로 일했고 Front-End 공부를 하고 있는 윤현진입니다.              
               </div>
-              <div>
-                <a href="">
-                    email
-                </a>
-                <a href="http://tiny.cc/gxwp4y" target="_blank">
-                    디자인 포트폴리오
-                </a>
-                <a href="" target="_blank">
-                    <i class="fas fa-camera"></i>
-                </a>
-                <a href="" target="_blank">
-                    github
-                </a>
-              </div>
+              <div class="d-flex mt-2">                
+                <div class="mr-3">
+                    <a href="http://tiny.cc/gxwp4y" target="_blank" class="text-secondary">
+                        <u>
+                            디자인 포트폴리오
+                        </u>
+                    </a>                    
+                </div>                
+                <div>               
+                    <a href="https://github.com/hyunjinyoon-christine" target="_blank" class="text-secondary">
+                        <i class="fab fa-github fa-lg"></i>
+                    </a>                
+                    <a href="https://www.linkedin.com/in/hyunjin-yoon-851971a6" target="_blank" class="text-secondary">
+                        <i class="fab fa-linkedin fa-lg"></i>
+                    </a>
+                    <a href="https://medium.com/@moriwilly" target="_blank" class="text-secondary">
+                        <i class="fab fa-medium-m fa-lg"></i>
+                    </a>
+                    <a href="facebook.com/HyunjinYoonMe" target="_blank" class="text-secondary">
+                        <i class="fab fa-facebook-square fa-lg"></i>
+                    </a>
+                </div>
+              </div>              
           </div>
       </div>
       <div class="container">
