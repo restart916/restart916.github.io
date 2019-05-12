@@ -50,7 +50,6 @@
 </template>
 
 <script>
-import NavLink from './NavLink.vue'
 
 export default {
   name: 'Home',
@@ -60,8 +59,6 @@ export default {
           default: () => []
       }
   },
-  components: { NavLink },
-
   computed: {
     data () {
       return this.$page.frontmatter

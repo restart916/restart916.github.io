@@ -45,6 +45,8 @@
 
     <WorkDetail v-else-if="$page.frontmatter.worksDetail"/>
 
+    <About v-else-if="$page.frontmatter.about"/>
+
     <Page
       v-else
       :sidebar-items="sidebarItems"
@@ -72,6 +74,7 @@ import Navbar from './Navbar.vue'
 import Works from './Works.vue'
 import WorkDetail from './WorkDetail.vue'
 import BookDetail from './BookDetail.vue'
+import About from './About.vue'
 import Page from './Page.vue'
 import Sidebar from './Sidebar.vue'
 import Footer from './Footer.vue'
@@ -88,7 +91,9 @@ export default {
     Works,
     BookDetail,
     WorkDetail,
-    Page},
+    Page,
+    About
+  },
 
   data () {
     return {
