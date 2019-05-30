@@ -3,7 +3,7 @@ const webpack = require("webpack");
 
 
 module.exports = {
-  title: 'Hyunjin Yoon',
+  title: 'Yongsang Lee',
   description: 'blog',
   head: [
       ['link', {
@@ -16,11 +16,9 @@ module.exports = {
   themeConfig: {
     nav: [
       { text: 'Blog', link: '/' },
-      { text: 'Works', link: '/works/' },
-      { text: 'Book', link: '/book/' },
       { text: 'About', link: '/about/' }
     ],
-    sidebar: 'auto'  
+    sidebar: 'auto'
   },
   configureWebpack: {
     resolve: {

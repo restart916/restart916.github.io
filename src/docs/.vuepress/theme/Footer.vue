@@ -1,6 +1,6 @@
 <template>
   <footer class="footer pb-5 text-secondary">
-    Hyunjin Yoon
+    Yongsang Lee
     | Powered by
     <a
       href="https://vuepress.vuejs.org/"
