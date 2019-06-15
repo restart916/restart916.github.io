@@ -7,7 +7,7 @@
     <meta name="description" content="blog">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     
-    <link rel="preload" href="/assets/css/0.styles.4fc48e79.css" as="style"><link rel="preload" href="/assets/js/app.63f00684.js" as="script"><link rel="preload" href="/assets/js/7.ee7f2ccf.js" as="script"><link rel="prefetch" href="/assets/js/2.07fe4054.js"><link rel="prefetch" href="/assets/js/3.bf3b2bc5.js"><link rel="prefetch" href="/assets/js/4.bb4c0816.js"><link rel="prefetch" href="/assets/js/5.da8697ed.js"><link rel="prefetch" href="/assets/js/6.1a2b301c.js"><link rel="prefetch" href="/assets/js/8.e2255ec8.js">
+    <link rel="preload" href="/assets/css/0.styles.4fc48e79.css" as="style"><link rel="preload" href="/assets/js/app.ca433c2a.js" as="script"><link rel="preload" href="/assets/js/7.a22cb45c.js" as="script"><link rel="prefetch" href="/assets/js/2.07fe4054.js"><link rel="prefetch" href="/assets/js/3.bf3b2bc5.js"><link rel="prefetch" href="/assets/js/4.bb4c0816.js"><link rel="prefetch" href="/assets/js/5.da8697ed.js"><link rel="prefetch" href="/assets/js/6.1a2b301c.js"><link rel="prefetch" href="/assets/js/8.e2255ec8.js">
     <link rel="stylesheet" href="/assets/css/0.styles.4fc48e79.css">
   </head>
   <body>
@@ -139,7 +139,7 @@ Memory Usage: 34.4 MB, less than 36.97% of JavaScript online submissions for Jew
 
     <span class="token keyword">return</span> count<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre></div><p>두 주어진 문자를 정렬한 후 순서대로 하나씩 비교해가면서 갯수를 세도록 했습니다. 중요한점은 정렬이 되어있기때문에 둘중 한쪽의 비교가 어긋낫을때 반대편을 초기화 시킬필요가 없다는 점입니다. 그래서 두 인덱스가 계속 증가를 하고 어느한쪽의 길이가 다하면 그 지점에서 비교를 종료할 수 있습니다.</p> <p>빅오표현식으로는 이전 방식과 같게 O(N) (N=S,J둘중 긴것)이라고 생각했으나 앞에 sort를 했던것을 생각하면 nLogn (n=S,J둘중 긴것)이지 않을까 생각해봅니다.</p> <h2 id="정리"><a href="#정리" aria-hidden="true" class="header-anchor">#</a> 정리</h2> <ol><li>무식하게 풀기(BF)가 된다면 바로 풀어볼것을 권장합니다</li> <li>풀이가 가능하면 이후에 개선을 하..는데</li> <li>개선전 성능을 측정(빅오표기법)하고 개선을 시작합니다. 현 상태를 파악하면 개선하는데도 도움이 됩니다.</li> <li>개선하면 다시 측정해보고 더 개선할 지점이 있는지 고민해봅니다.</li></ol> <p>ps. 공부시에는 한문제에 2시간 이상 소요해서 더이상 개선이 안될때는 적당히 남들의 풀이를 보고 공부하는것도 추천합니다. 아까부터 O(1)이 된다는 게시글이 자꾸 눈에 들어오네요.</p></div> <section class="prev-next-links mt-5 pt-4 border-top"><div class="links-wrapper d-flex justify-content-between justify-content-end"><div><!----></div> <div><!----></div></div></section> </div> <!----> <footer class="footer pb-5 text-secondary">
+</code></pre></div><p>두 주어진 문자를 정렬한 후 순서대로 하나씩 비교해가면서 갯수를 세도록 했습니다. 중요한점은 정렬이 되어있기때문에 둘중 한쪽의 비교가 어긋낫을때 반대편을 초기화 시킬필요가 없다는 점입니다. 그래서 두 인덱스가 계속 증가를 하고 어느한쪽의 길이가 다하면 그 지점에서 비교를 종료할 수 있습니다.</p> <p>빅오표현식으로는 이전 방식과 같게 O(N) (N=S,J둘중 긴것)이라고 생각했으나 앞에 sort를 했던것을 생각하면 nLogn (n=S,J둘중 긴것)이지 않을까 생각해봅니다.</p> <h2 id="정리"><a href="#정리" aria-hidden="true" class="header-anchor">#</a> 정리</h2> <ol><li>무식하게 풀기(BF)가 된다면 바로 풀어볼것을 권장합니다</li> <li>풀이가 가능하면 이후에 개선을 하..는데</li> <li>개선전 성능을 측정(빅오표기법)하고 개선을 시작합니다. 현 상태를 파악하면 개선하는데도 도움이 됩니다.</li> <li>개선하면 다시 측정해보고 더 개선할 지점이 있는지 고민해봅니다.</li></ol> <p>ps. 공부시에는 한문제에 2시간 이상 소요해서 더이상 개선이 안될때는 적당히 남들의 풀이를 보고 공부하는것도 추천합니다.</p></div> <section class="prev-next-links mt-5 pt-4 border-top"><div class="links-wrapper d-flex justify-content-between justify-content-end"><div><!----></div> <div><!----></div></div></section> </div> <!----> <footer class="footer pb-5 text-secondary">
   Yongsang Lee
   | Powered by
   <a href="https://vuepress.vuejs.org/" rel="noopener" target="_blank">
@@ -147,6 +147,6 @@ Memory Usage: 34.4 MB, less than 36.97% of JavaScript online submissions for Jew
   </a>
   © 2019
 </footer></div></div>
-    <script src="/assets/js/app.63f00684.js" defer></script><script src="/assets/js/7.ee7f2ccf.js" defer></script>
+    <script src="/assets/js/app.ca433c2a.js" defer></script><script src="/assets/js/7.a22cb45c.js" defer></script>
   </body>
 </html>
