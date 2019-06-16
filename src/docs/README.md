@@ -1,9 +1,11 @@
 ---
 home: 1
-title: Home
+title: Wally Lee Dev Blog
 meta:
-  - name: description
-    content: Page description
-  - name: keywords
-    content: js vuejs vuepress
+  - name: og:title
+    content: Wally Lee Dev Blog
+  - name: og:description
+    content: Wally Lee Dev Blog
+  - name: og:image
+    content: /upload/profile_image.png
 ---

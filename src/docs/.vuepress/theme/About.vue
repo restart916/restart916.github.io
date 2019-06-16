@@ -2,7 +2,7 @@
   <div class="about py-md-5 px-0 py-4">
       <div>
           <h2 class="mb-4">
-              About Yongsang Lee
+              About Wally Lee
           </h2>
           <div>
               <div class="text-secondary">

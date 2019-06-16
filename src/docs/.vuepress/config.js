@@ -3,8 +3,8 @@ const webpack = require("webpack");
 
 
 module.exports = {
-  title: 'Yongsang Lee',
-  description: 'blog',
+  title: 'Wally Lee',
+  description: 'dev blog',
   head: [
       ['link', {
         rel: 'stylesheet',

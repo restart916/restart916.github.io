@@ -3,15 +3,15 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Leetcode 771. Jewels and Stones | Yongsang Lee</title>
-    <meta name="description" content="blog">
+    <title>Leetcode 771. Jewels and Stones | Wally Lee</title>
+    <meta name="description" content="dev blog">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-    
-    <link rel="preload" href="/assets/css/0.styles.ebc44066.css" as="style"><link rel="preload" href="/assets/js/app.c0a1a074.js" as="script"><link rel="preload" href="/assets/js/7.58fa23b4.js" as="script"><link rel="prefetch" href="/assets/js/2.94b6c76c.js"><link rel="prefetch" href="/assets/js/3.2bacd970.js"><link rel="prefetch" href="/assets/js/4.d163d0ae.js"><link rel="prefetch" href="/assets/js/5.bdfdff7e.js"><link rel="prefetch" href="/assets/js/6.379b183d.js"><link rel="prefetch" href="/assets/js/8.e30c2249.js">
-    <link rel="stylesheet" href="/assets/css/0.styles.ebc44066.css">
+    <meta name="og:title" content="Wally Lee Dev Blog - Leetcode 771. Jewels and Stones"><meta name="og:description" content="Wally Lee Dev Blog - Leetcode 771. Jewels and Stones 문제를 풀면서 고생한 내용입니다."><meta name="og:image" content="/upload/leetcode_771.jpg">
+    <link rel="preload" href="/assets/css/0.styles.eed0ce08.css" as="style"><link rel="preload" href="/assets/js/app.93448cf8.js" as="script"><link rel="preload" href="/assets/js/7.58fa23b4.js" as="script"><link rel="prefetch" href="/assets/js/2.94b6c76c.js"><link rel="prefetch" href="/assets/js/3.2bacd970.js"><link rel="prefetch" href="/assets/js/4.d163d0ae.js"><link rel="prefetch" href="/assets/js/5.bdfdff7e.js"><link rel="prefetch" href="/assets/js/6.379b183d.js"><link rel="prefetch" href="/assets/js/8.e30c2249.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.eed0ce08.css">
   </head>
   <body>
-    <div id="app" data-server-rendered="true"><div class="theme-container container"><header class="navbar d-flex justify-content-center justify-content-md-between px-md-0"><div><a href="/" class="home-link mt-2 router-link-active"><!----> <span class="site-name text-dark">Yongsang Lee</span></a></div> <div class="links" style="max-width:nullpx;"><nav class="nav-links can-hide mr-md-3"><div class="nav-item"><a href="/" class="nav-link  px-2">Blog</a></div><div class="nav-item"><a href="/about/" class="nav-link  px-2">About</a></div> <!----></nav> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div></div></header> <div class="page py-md-5 px-0 py-4"> <div class="border-bottom pb-3 mb-4"><h3><span class="text-primary"># </span>
+    <div id="app" data-server-rendered="true"><div class="theme-container container"><header class="navbar d-flex justify-content-center justify-content-md-between px-md-0"><div><a href="/" class="home-link mt-2 router-link-active"><!----> <span class="site-name text-dark">Wally Lee</span></a></div> <div class="links" style="max-width:nullpx;"><nav class="nav-links can-hide mr-md-3"><div class="nav-item"><a href="/" class="nav-link  px-2">Blog</a></div><div class="nav-item"><a href="/about/" class="nav-link  px-2">About</a></div> <!----></nav> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div></div></header> <div class="page py-md-5 px-0 py-4"> <div class="border-bottom pb-3 mb-4"><h3><span class="text-primary"># </span>
       Leetcode 771. Jewels and Stones
     </h3></div> <div class="content"><p><a href="https://leetcode.com/problems/jewels-and-stones/" target="_blank" rel="noopener noreferrer">https://leetcode.com/problems/jewels-and-stones/<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <p>주어진 문자열S와 찾고싶은 문자J가 있으면 매칭되는 글자 수를 세는 문제입니다.</p> <p>문제를 풀때 다양한 알고리즘이나 풀이법을 고민할수도 있지만 먼저 단순하게 풀이(Brute Force)가 가능하면 그 방법으로 먼저 풀어보는것을 추천합니다.</p> <p>그럼 주어진 전체 문자열에 대해 하나하나 다 비교해보면서 갯수를 세는 단순한 풀이를 먼저 적용해보겠습니다.
 (easy 라고 막 풀었다가 나중에 큰코를 다치게 됩니다.)</p> <h2 id="brute-force-로-풀기"><a href="#brute-force-로-풀기" aria-hidden="true" class="header-anchor">#</a> Brute Force 로 풀기</h2> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">/**
@@ -140,13 +140,17 @@ Memory Usage: 34.4 MB, less than 36.97% of JavaScript online submissions for Jew
     <span class="token keyword">return</span> count<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre></div><p>두 주어진 문자를 정렬한 후 순서대로 하나씩 비교해가면서 갯수를 세도록 했습니다. 중요한점은 정렬이 되어있기때문에 둘중 한쪽의 비교가 어긋낫을때 반대편을 초기화 시킬필요가 없다는 점입니다. 그래서 두 인덱스가 계속 증가를 하고 어느한쪽의 길이가 다하면 그 지점에서 비교를 종료할 수 있습니다.</p> <p>빅오표현식으로는 이전 방식과 같게 O(N) (N=S,J둘중 긴것)이라고 생각했으나 앞에 sort를 했던것을 생각하면 nLogn (n=S,J둘중 긴것)이지 않을까 생각해봅니다.</p> <h2 id="정리"><a href="#정리" aria-hidden="true" class="header-anchor">#</a> 정리</h2> <ol><li>무식하게 풀기(BF)가 된다면 바로 풀어볼것을 권장합니다</li> <li>풀이가 가능하면 이후에 개선을 하..는데</li> <li>개선전 성능을 측정(빅오표기법)하고 개선을 시작합니다. 현 상태를 파악하면 개선하는데도 도움이 됩니다.</li> <li>개선하면 다시 측정해보고 더 개선할 지점이 있는지 고민해봅니다.</li></ol> <p>ps. 공부시에는 한문제에 2시간 이상 소요해서 더이상 개선이 안될때는 적당히 남들의 풀이를 보고 공부하는것도 추천합니다.</p></div> <section class="prev-next-links mt-5 pt-4 border-top"><div class="links-wrapper d-flex justify-content-between justify-content-end"><div><!----></div> <div><!----></div></div></section> </div> <!----> <footer class="footer pb-5 text-secondary">
-  Yongsang Lee
+  Wally Lee
   | Powered by
   <a href="https://vuepress.vuejs.org/" rel="noopener" target="_blank">
     VuePress
   </a>
+  | Theme by
+  <a href="https://hyunjinyoon-christine.github.io" rel="noopener" target="_blank">
+    Hyunjin Yoon
+  </a>
   © 2019
 </footer></div></div>
-    <script src="/assets/js/app.c0a1a074.js" defer></script><script src="/assets/js/7.58fa23b4.js" defer></script>
+    <script src="/assets/js/app.93448cf8.js" defer></script><script src="/assets/js/7.58fa23b4.js" defer></script>
   </body>
 </html>
