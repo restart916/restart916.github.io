@@ -1,10 +1,10 @@
 ---
 about: 1
 meta:
-  - name: og:title
+  - property: og:title
     content: Wally Lee Dev Blog - About
-  - name: og:description
+  - property: og:description
     content: Wally Lee Dev Blog - About
-  - name: og:image
-    content: /upload/profile_image.png
+  - property: og:image
+    content: https://restart916.github.io/upload/profile_image.png
 ---
