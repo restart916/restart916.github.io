@@ -11,7 +11,11 @@ module.exports = {
         href: 'https://use.fontawesome.com/releases/v5.8.2/css/all.css',
         integrity: 'sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay',
         crossorigin: 'anonymous'
-      }]
+      }],
+      ['mata', { name: 'og:title', content: 'Wally Lee' }],
+      ['mata', { name: 'og:description', content: 'dev blog' }],
+      ['mata', { name: 'og:image', content: 'https://restart916.github.io/upload/profile_image.png' }],
+      ['mata', { name: 'twitter:card', content: 'summary' }],
   ],
   themeConfig: {
     nav: [
