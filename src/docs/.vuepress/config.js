@@ -12,10 +12,10 @@ module.exports = {
         integrity: 'sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay',
         crossorigin: 'anonymous'
       }],
-      ['mata', { name: 'og:title', content: 'Wally Lee' }],
-      ['mata', { name: 'og:description', content: 'dev blog' }],
-      ['mata', { name: 'og:image', content: 'https://restart916.github.io/upload/profile_image.png' }],
-      ['mata', { name: 'twitter:card', content: 'summary' }],
+      ['meta', { name: 'og:title', content: 'Wally Lee' }],
+      ['meta', { name: 'og:description', content: 'dev blog' }],
+      ['meta', { name: 'og:image', content: 'https://restart916.github.io/upload/profile_image.png' }],
+      ['meta', { name: 'twitter:card', content: 'summary' }],
   ],
   themeConfig: {
     nav: [
