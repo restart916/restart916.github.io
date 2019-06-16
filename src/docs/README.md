@@ -8,4 +8,6 @@ meta:
     content: Wally Lee Dev Blog
   - property: og:image
     content: https://restart916.github.io/upload/profile_image.png
+  - name: twitter:card
+    content: summary
 ---
